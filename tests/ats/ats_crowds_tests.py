@@ -8,7 +8,7 @@ from pymongo.connection import Connection, database
 sys.path.append('../../intake/ats')
 import unittest
 from operator import itemgetter
-from ats_crowds import Epoch, GraphReader, MCL, Evolution, CrowdsDB
+from intake.ats.ats_crowds import Epoch, GraphReader, MCL, Evolution, CrowdsDB
 from datetime import datetime as dt
 
 #TEST_STARTING_EPOCH = 1280639087
@@ -86,6 +86,7 @@ class DemoCrowdGeneration:
         DemoCrowdGeneration.test_postProcessing()
     
 
+@unittest.skip
 class CrowdsDBTests(unittest.TestCase):
     def setUp(self):
         crowds_db.drop_collection(crowds_collection)
